@@ -1,0 +1,21 @@
+
+    <footer class="footer">
+        
+        <span class="todo-count"><strong> {{ pendientes }} </strong> Tareas Pendientes</span>
+        
+        <ul class="filters">
+
+            <li *ngFor="let filtro of filtros"
+                (click)="cambiarFiltro(filtro)">
+                <a href="#/"
+                [class.selected]="filtro===filtroActual">
+                    {{filtro | titlecase}} <!--titlecase se encarga de poner la primera letra del texto en mayusculas-->
+                </a>
+            </li>
+        </ul>
+        
+        <button class="clear-completed" 
+                (click)="limpiarCompletados()">
+                Limpiar Compleatdos
+        </button>
+    </footer>
